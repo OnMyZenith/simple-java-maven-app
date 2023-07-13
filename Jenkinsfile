@@ -17,12 +17,18 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sleep(10)
                 sh 'mvn test'
             }
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Artificial Delay') {
+            steps {
+                script {
+                    sleep(30) // Adds a delay of 30 seconds
                 }
             }
         }
