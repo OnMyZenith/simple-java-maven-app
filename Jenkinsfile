@@ -25,10 +25,10 @@ pipeline {
                 }
             }
         }
-        stage('Artificial Delay') {
+        stage('Artificial Failure') {
             steps {
                 script {
-                    sleep(30) // Adds a delay of 30 seconds
+                    exit 1
                 }
             }
         }
