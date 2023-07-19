@@ -25,13 +25,6 @@ pipeline {
                 }
             }
         }
-        stage('Artificial Delay') {
-            steps {
-                script {
-                    sleep(30) // Adds a delay of 30 seconds
-                }
-            }
-        }
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
