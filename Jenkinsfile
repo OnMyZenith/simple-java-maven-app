@@ -17,6 +17,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                exit 1
                 sh 'mvn test'
             }
             post {
